@@ -10,7 +10,8 @@ const GameOver = () => {
 	const navigate = useNavigate();
 	const score = localStorage.getItem('score');
 	const highscore = localStorage.getItem('highscore');
-	console.log(score)
+	localStorage.setItem('highscore', (score > highscore) ? score : highscore);
+	console.log(highscore)
 
 	return (
 		<div id='postGame' style={{backgroundImage: `url(${bad[1]})`}}>
@@ -19,12 +20,10 @@ const GameOver = () => {
 				<h2>Score: {score}</h2>
 				<br />
 				<button id='PlayAgain' onClick={() => {
-					localStorage.setItem('highscore', (score > highscore) ? score : highscore);
 					localStorage.setItem('score', 0);
 					navigate('/play');
 				}}>Play Again</button>
 				<button id='gotoHome' onClick={() => {
-					localStorage.setItem('highscore', (score > highscore) ? score : highscore);
 					localStorage.setItem('score', 0);
 					navigate('/');
 				}}>Back to Home</button>

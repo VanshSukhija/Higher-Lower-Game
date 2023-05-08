@@ -6,15 +6,20 @@ import ScoreList from './components/ScoreList';
 import './App.css';
 import tempdata from './tempdata.json';
 
-const MainPage = () => {
-    const [data, setData] = useState([]);
+const MainPage = ({ arr }) => {
+    const [data, setData] = useState(arr);
     const [index, setIndex] = useState(1);
     const navigate = useNavigate();
 
-    // for (let i = tempdata.length - 1; i > 0; i--) {
-    // 	const j = Math.floor(Math.random() * (i + 1));
-    // 	[tempdata[i], tempdata[j]] = [tempdata[j], tempdata[i]];
-    // }
+    // useEffect(() => {
+    //     for (let i = arr.length - 1; i > 0; i--) {
+    //         const j = Math.floor(Math.random() * (i + 1));
+    //         [arr[i], arr[j]] = [arr[j], arr[i]];
+    //     }
+    //     setData(arr)
+    //     document.getElementById('Loading').style.display = 'none';
+    //     document.getElementsByClassName('Container')[0].style.display = 'block';
+    // }, [])
 
     // const options = {
     // 	method: 'GET',
@@ -37,8 +42,8 @@ const MainPage = () => {
     // }
 
     let versus = document.getElementsByClassName("versus");
-    let follRight = tempdata[index].content.itemContent.user_results.result.legacy.followers_count;
-    let follLeft = tempdata[(index - 1 + tempdata.length) % tempdata.length].content.itemContent.user_results.result.legacy.followers_count;
+    let follRight = data[index].content.itemContent.user_results.result.legacy.followers_count;
+    let follLeft = data[(index - 1 + data.length) % data.length].content.itemContent.user_results.result.legacy.followers_count;
 
     function checkhigh() {
         colorChange(follRight >= follLeft);
@@ -55,7 +60,7 @@ const MainPage = () => {
             versus[0].classList = "versus Gversus";
             setTimeout(() => {
                 colorChange(null);
-                setIndex((index + 1) % tempdata.length);
+                setIndex((index + 1) % data.length);
             }, 1000);
         }
         else if (verdict === false) {
@@ -72,12 +77,13 @@ const MainPage = () => {
 
     return (
         <div>
+            {/* <div id='Loading'>Loading...</div> */}
             <div className='Container'>
                 <div className='playGround'>
-                    <LeftGameCard arr={data} index={(index - 1 + tempdata.length) % tempdata.length} />
+                    <LeftGameCard arr={data} index={(index - 1 + data.length) % data.length} />
                     <RightGameCard arr={data} clickHigh={checkhigh} clickLow={checklow} index={index} />
                 </div>
-                <ScoreList index={(index - 1 + tempdata.length) % tempdata.length} />
+                <ScoreList index={(index - 1 + data.length) % data.length} />
             </div>
         </div>
     )

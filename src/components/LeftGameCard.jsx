@@ -10,9 +10,9 @@ const LeftGameCard = ({arr, index}) => {
 	}, [index])
 
 	return (
-		<div className='GameCard'>
-			<img src={data.profile_image_url_https.replace("_normal", "")} alt='gamepic1' className='userPfp' />
-			<div className='gameData'>
+		<div className='GameCard' style={{backgroundImage: `url(${data.profile_image_url_https.replace("_normal", "")})`}}>
+			{/* <img src={data.profile_image_url_https.replace("_normal", "")} alt='gamepic1' className='userPfp' /> */}
+			<div className='gameDataLeft'>
 				<div className="userName">"{data.name}"</div>
 				<div className="userID">@{data.screen_name}</div>
 				<div className="text">has</div>

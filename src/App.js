@@ -4,15 +4,22 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MainPage from './MainPage';
 import GameOver from './GameOver';
 import Home from './Home';
+import tempdata from './tempdata.json';
 
 const App = () => {
+
+	for (let i = tempdata.length - 1; i > 0; i--) {
+    	const j = Math.floor(Math.random() * (i + 1));
+    	[tempdata[i], tempdata[j]] = [tempdata[j], tempdata[i]];
+    }
+
 	return (
 		<>
 			<BrowserRouter>
 				<Routes>
-					<Route exact path="/" element={<Home />} />
-					<Route exact path="/play" element={<MainPage />} />
+					<Route exact path="/play" element={<MainPage arr={tempdata} />} />
 					<Route exact path='/gameover' element={<GameOver />} />
+					<Route exact path="/" element={<Home />} default/>
 				</Routes>
 			</BrowserRouter>
 		</>
