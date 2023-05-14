@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 
-const GameOver = () => {
+const GameOver = ({ shuffle }) => {
 
 	let bad = ['https://media2.giphy.com/media/10Mn81By5JVRnO/giphy.gif?cid=ecf05e47oge9572v8vkwna3wfwtzduz1wzll4vnsjd12seor&ep=v1_gifs_search&rid=giphy.gif&ct=g', 'https://media2.giphy.com/media/1oKQqphQDlpb2rHUpZ/giphy.gif?cid=ecf05e47gkvo1h0bckw1v0x783v9tlx5v6w2fxggd6ehx5oe&ep=v1_gifs_search&rid=giphy.gif&ct=g'];
 	let avg = ['https://media3.giphy.com/media/l1LbUHrJb7GpuOHK0/giphy.gif?cid=ecf05e479ed3t43g6qrdcy5e18h43r4hl1q8dasfkwy93lq2&ep=v1_gifs_search&rid=giphy.gif&ct=g']
@@ -20,7 +20,9 @@ const GameOver = () => {
 				<h2>Score: {score}</h2>
 				<br />
 				<button id='PlayAgain' onClick={() => {
+					shuffle();
 					localStorage.setItem('score', 0);
+					// setTimeout(() => navigate('/play'), 100);
 					navigate('/play');
 				}}>Play Again</button>
 				<button id='gotoHome' onClick={() => {

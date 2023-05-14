@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
-const Home = () => {
+const Home = ({ shuffle }) => {
     const navigate = useNavigate();
 
     return (
@@ -12,7 +12,8 @@ const Home = () => {
                 <h2>Who has the most Twitter followers?</h2>
                 <br />
                 <button id='Playbtn' onClick={() => {
-                    navigate('/play')
+                    shuffle();
+                    navigate('/play');
                 }} >Let's Find Out</button>
             </div>
         </div>

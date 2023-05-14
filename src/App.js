@@ -8,9 +8,11 @@ import tempdata from './tempdata.json';
 
 const App = () => {
 
-	for (let i = tempdata.length - 1; i > 0; i--) {
-    	const j = Math.floor(Math.random() * (i + 1));
-    	[tempdata[i], tempdata[j]] = [tempdata[j], tempdata[i]];
+	function reshuffle() {
+        for (let i = tempdata.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [tempdata[i], tempdata[j]] = [tempdata[j], tempdata[i]];
+        }
     }
 
 	return (
@@ -18,8 +20,8 @@ const App = () => {
 			<BrowserRouter>
 				<Routes>
 					<Route exact path="/play" element={<MainPage arr={tempdata} />} />
-					<Route exact path='/gameover' element={<GameOver />} />
-					<Route exact path="/" element={<Home />} default/>
+					<Route exact path='/gameover' element={<GameOver shuffle={reshuffle} />} />
+					<Route exact path="/" element={<Home shuffle={reshuffle} />} default/>
 				</Routes>
 			</BrowserRouter>
 		</>

@@ -4,7 +4,6 @@ import LeftGameCard from './components/LeftGameCard';
 import RightGameCard from './components/RightGameCard';
 import ScoreList from './components/ScoreList';
 import './App.css';
-import tempdata from './tempdata.json';
 
 const MainPage = ({ arr }) => {
     const [data, setData] = useState(arr);
@@ -61,7 +60,7 @@ const MainPage = ({ arr }) => {
             setTimeout(() => {
                 colorChange(null);
                 setIndex((index + 1) % data.length);
-            }, 1000);
+            }, 1500);
         }
         else if (verdict === false) {
             versus[0].classList = "versus Rversus";
@@ -69,15 +68,21 @@ const MainPage = ({ arr }) => {
                 colorChange(null);
                 localStorage.setItem('score', index-1)
                 navigate('/gameover');
-            }, 1000);
+            }, 1500);
         }
         document.getElementsByClassName('rightdetails')[0].style.display = 'block';
         document.getElementsByClassName('btns')[0].style.display = 'none';
     }
 
+    // window.addEventListener('beforeunload', (e) => {
+    //     e.preventDefault();
+    //     e.returnValue = '';
+    //     setTimeout(() => navigate('/'), 1000);
+    //     // navigate('/');
+    // })
+
     return (
         <div>
-            {/* <div id='Loading'>Loading...</div> */}
             <div className='Container'>
                 <div className='playGround'>
                     <LeftGameCard arr={data} index={(index - 1 + data.length) % data.length} />
