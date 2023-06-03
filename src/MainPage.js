@@ -29,7 +29,7 @@ const MainPage = ({ arr }) => {
     // };
 
     // async function getData() {
-    // fetch('https://twitter135.p.rapidapi.com/Following/?id=1271032370800422912', options)
+    // fetch('https://twitter135.p.rapidapi.com/v2/Following/?id=1271032370800422912', options)
     // .then(response => {
     // 	response.json()
     // })
@@ -74,7 +74,7 @@ const MainPage = ({ arr }) => {
         document.getElementsByClassName('btns')[0].style.display = 'none';
     }
 
-    // window.addEventListener('beforeunload', (e) => {
+    // window.addEventListener('beforeunload', (e) => { // refresh kar rahe hain to Home page pe bhej do
     //     e.preventDefault();
     //     e.returnValue = '';
     //     setTimeout(() => navigate('/'), 1000);
