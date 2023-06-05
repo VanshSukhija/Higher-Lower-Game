@@ -1,8 +1,8 @@
 {
   "name": "higher_lower",
   "version": "0.1.0",
-  "private": true,
-  "homepage": "https://VanshSukhija.github.io/Higher-Lower-Game/",
+  "private": false,
+  "homepage": "https://vanshsukhija.github.io/Higher-Lower-Game",
   "dependencies": {
     "@fortawesome/fontawesome": "^1.1.8",
     "@fortawesome/fontawesome-free-regular": "^5.0.13",
