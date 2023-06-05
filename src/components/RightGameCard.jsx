@@ -22,7 +22,7 @@ const RightGameCard = ({ arr, clickHigh, clickLow, index }) => {
                 <div className="text">has</div>
                 <div className="rightTransitiondiv">
                     <div className="rightdetails">
-                        <div className="FollowerCount">{data.followers_count}</div>
+                        <div className="FollowerCount">{(Math.round(data.followers_count/1000)*1000).toLocaleString("en-US")}</div>
                         <div className="text">followers on Twitter</div>
                     </div>
                     <div className="btns">

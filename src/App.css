@@ -6,9 +6,33 @@
     margin: 0;
 }
 
-/* .Container {
-    display: none;
-} */
+#titleH{
+    color: rgb(0, 187, 0);
+    font-size: 100px;
+}
+
+#titleH img, #titleL img{
+    width: 100px;
+    height: 100px;
+    position: relative;
+    top: 20px;
+}
+
+#titleL{
+    color: red;
+    font-size: 100px;
+}
+
+#twitter{
+    color: #03A9F4;
+}
+
+#twitter img{
+    width: 32px;
+    height: 32px;
+    position: relative;
+    top: 5px;
+}
 
 .playGround {
     display: flex;
@@ -209,7 +233,7 @@ button:hover {
     height: 100vh;
     background-color: black;
     text-align: center;
-    background-image: url('https://media0.giphy.com/media/8vc2rMUDjhy6Y/giphy.gif?cid=ecf05e47qds4l3mxsgapt8t2hvwfrfk1q9bbfstdshmtlfhy&ep=v1_gifs_search&rid=giphy.gif&ct=g');
+    background-image: url('./assets/hello.gif');
     background-size: cover;
     display: flex;
     justify-content: center;

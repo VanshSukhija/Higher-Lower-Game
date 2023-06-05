@@ -34,15 +34,15 @@ const MainPage = ({ arr }) => {
     // 	response.json()
     // })
     // .then(res => {
-    // 	// console.log(res)
+    //  console.log(res)
     // 	setData(res.data.user.result.timeline.timeline.instructions[2].entries)
     // })
     // .catch(err => console.error(err));
     // }
 
     let versus = document.getElementsByClassName("versus");
-    let follRight = data[index].content.itemContent.user_results.result.legacy.followers_count;
-    let follLeft = data[(index - 1 + data.length) % data.length].content.itemContent.user_results.result.legacy.followers_count;
+    let follRight = Math.round(data[index].content.itemContent.user_results.result.legacy.followers_count/1000)*1000;
+    let follLeft = Math.round(data[(index - 1 + data.length) % data.length].content.itemContent.user_results.result.legacy.followers_count/1000)*1000;
 
     function checkhigh() {
         colorChange(follRight >= follLeft);

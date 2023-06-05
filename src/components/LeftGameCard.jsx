@@ -15,7 +15,7 @@ const LeftGameCard = ({arr, index}) => {
 				<div className="userName">"{data.name}"</div>
 				<div className="userID">@{data.screen_name}</div>
 				<div className="text">has</div>
-				<div className="FollowerCount">{data.followers_count}</div>
+				<div className="FollowerCount">{(Math.round(data.followers_count/1000)*1000).toLocaleString("en-US")}</div>
 				<div className="text">followers on Twitter</div>
 			</div>
 		</div>

@@ -15,6 +15,8 @@ const App = () => {
         }
     }
 
+	if(!("highscore" in localStorage)) localStorage.setItem("highscore", "0");
+
 	return (
 		<>
 			<BrowserRouter>

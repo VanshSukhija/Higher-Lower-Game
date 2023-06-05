@@ -1,31 +1,43 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useNavigate } from 'react-router-dom';
+import bad from './assets/minecraft.gif'
+import good from './assets/brofist.gif'
+import avg from './assets/what-up.gif'
 
 const GameOver = ({ shuffle }) => {
-
-	let bad = ['https://media2.giphy.com/media/10Mn81By5JVRnO/giphy.gif?cid=ecf05e47oge9572v8vkwna3wfwtzduz1wzll4vnsjd12seor&ep=v1_gifs_search&rid=giphy.gif&ct=g', 'https://media2.giphy.com/media/1oKQqphQDlpb2rHUpZ/giphy.gif?cid=ecf05e47gkvo1h0bckw1v0x783v9tlx5v6w2fxggd6ehx5oe&ep=v1_gifs_search&rid=giphy.gif&ct=g'];
-	let avg = ['https://media3.giphy.com/media/l1LbUHrJb7GpuOHK0/giphy.gif?cid=ecf05e479ed3t43g6qrdcy5e18h43r4hl1q8dasfkwy93lq2&ep=v1_gifs_search&rid=giphy.gif&ct=g']
-	let good = ['family-guy', 'https://media1.giphy.com/media/3aO2dC3fVZlK/giphy.gif?cid=ecf05e478gk5dl0xv21iunioz2jd58k8gqxg9iuso7v64j4b&ep=v1_gifs_search&rid=giphy.gif&ct=g']
-
 	const navigate = useNavigate();
-	const score = localStorage.getItem('score');
-	const highscore = localStorage.getItem('highscore');
-	localStorage.setItem('highscore', (score > highscore) ? score : highscore);
-	console.log(highscore)
+	const score = parseInt(localStorage.getItem('score'));
+	const highscore = parseInt(localStorage.getItem('highscore'));
+
+	let gif = avg;
+	if (score >= highscore) gif = good
+	else if (score < 0.5 * highscore) gif = bad
 
 	return (
-		<div id='postGame' style={{backgroundImage: `url(${bad[1]})`}}>
+		<div id='postGame' style={{ backgroundImage: `url(${gif})` }}>
 			<div id='postGameContainer'>
-				<h1>GAME OVER</h1><br />
-				<h2>Score: {score}</h2>
+				<h1>GAME OVER</h1>
+				<br />
+				<h2>Your Score: {score}</h2>
+				<br />
+				<h2>High Score: {highscore}</h2>
+				<br />
+				{
+					(score > highscore) ?
+						<h2>Dude! Did you break your own HighScore!!</h2> :
+						(score >= 0.5 * highscore) ?
+							<h2>Good Job! You are getting better...</h2> :
+							<h2>Naah dawg, I know you ain't that bad :/</h2>
+				}
 				<br />
 				<button id='PlayAgain' onClick={() => {
 					shuffle();
+					localStorage.setItem('highscore', (score > highscore) ? String(score) : String(highscore));
 					localStorage.setItem('score', 0);
-					// setTimeout(() => navigate('/play'), 100);
 					navigate('/play');
 				}}>Play Again</button>
 				<button id='gotoHome' onClick={() => {
+					localStorage.setItem('highscore', (score > highscore) ? String(score) : String(highscore));
 					localStorage.setItem('score', 0);
 					navigate('/');
 				}}>Back to Home</button>
