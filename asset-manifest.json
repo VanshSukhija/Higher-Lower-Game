@@ -1,18 +1,22 @@
 {
   "files": {
-    "main.css": "/Higher-Lower-Game/static/css/main.dc2686e9.css",
-    "main.js": "/Higher-Lower-Game/static/js/main.5c8815af.js",
+    "main.css": "/Higher-Lower-Game/static/css/main.b800cf9f.css",
+    "main.js": "/Higher-Lower-Game/static/js/main.d70f5242.js",
+    "static/media/what-up.gif": "/Higher-Lower-Game/static/media/what-up.90a5d6713d4349ccb3e7.gif",
+    "static/media/hello.gif": "/Higher-Lower-Game/static/media/hello.181c4c526e057371dec5.gif",
+    "static/media/brofist.gif": "/Higher-Lower-Game/static/media/brofist.6684d22ac74c2592f0c6.gif",
     "static/media/fontawesome-webfont.svg?v=4.7.0": "/Higher-Lower-Game/static/media/fontawesome-webfont.c1e38fd9e0e74ba58f7a.svg",
+    "static/media/minecraft.gif": "/Higher-Lower-Game/static/media/minecraft.0a36e40e6e41f312c2e6.gif",
     "static/media/fontawesome-webfont.eot": "/Higher-Lower-Game/static/media/fontawesome-webfont.8b43027f47b20503057d.eot",
     "static/media/fontawesome-webfont.ttf?v=4.7.0": "/Higher-Lower-Game/static/media/fontawesome-webfont.1e59d2330b4c6deb84b3.ttf",
     "static/media/fontawesome-webfont.woff?v=4.7.0": "/Higher-Lower-Game/static/media/fontawesome-webfont.f691f37e57f04c152e23.woff",
     "static/media/fontawesome-webfont.woff2?v=4.7.0": "/Higher-Lower-Game/static/media/fontawesome-webfont.20fd1704ea223900efa9.woff2",
     "index.html": "/Higher-Lower-Game/index.html",
-    "main.dc2686e9.css.map": "/Higher-Lower-Game/static/css/main.dc2686e9.css.map",
-    "main.5c8815af.js.map": "/Higher-Lower-Game/static/js/main.5c8815af.js.map"
+    "main.b800cf9f.css.map": "/Higher-Lower-Game/static/css/main.b800cf9f.css.map",
+    "main.d70f5242.js.map": "/Higher-Lower-Game/static/js/main.d70f5242.js.map"
   },
   "entrypoints": [
-    "static/css/main.dc2686e9.css",
-    "static/js/main.5c8815af.js"
+    "static/css/main.b800cf9f.css",
+    "static/js/main.d70f5242.js"
   ]
 }
