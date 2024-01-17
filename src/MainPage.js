@@ -6,7 +6,7 @@ import ScoreList from './components/ScoreList';
 import './App.css';
 
 const MainPage = ({ arr }) => {
-    const [data, setData] = useState(arr);
+    const data = arr;
     const [index, setIndex] = useState(1);
     const navigate = useNavigate();
 

@@ -2,7 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import up from './assets/green-up.png'
 import down from './assets/red-down.png'
-import twitter from './assets/twitter.png'
+import Xwhite from './assets/Xwhite.png'
 
 const Home = ({ shuffle }) => {
     const navigate = useNavigate();
@@ -17,7 +17,7 @@ const Home = ({ shuffle }) => {
                 </h1>
                 <br />
                 <h2>
-                    Who has the most <span id='twitter'>Twitter <img src={twitter} alt="twitter" /></span> followers?
+                    Who has the most followers on <img id='X' src={Xwhite} alt="X" /> ?
                 </h2>
                 <br />
                 <button id='Playbtn' onClick={() => {
