@@ -24,7 +24,7 @@ const GameOver = ({ shuffle }) => {
 				<br />
 				{
 					(score > highscore) ?
-						<h2>Dude! Did you break your own HighScore!!</h2> :
+						<h2>Dude! Did you break your own HighScore!?</h2> :
 						(score >= 0.5 * highscore) ?
 							<h2>Good Job! You are getting better...</h2> :
 							<h2>Naah dawg, I know you ain't that bad :/</h2>
